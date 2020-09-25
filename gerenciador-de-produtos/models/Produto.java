@@ -2,10 +2,12 @@ package models;
 
 public abstract class Produto {
     private String nome;
+    private String fabricante;
     private double valor;
 
-    public Produto(String nome, double valor) {
+    public Produto(String nome, String fabricante, double valor) {
         this.nome = nome;
+        this.fabricante = fabricante;
         this.valor = valor;
     }
 
@@ -15,6 +17,14 @@ public abstract class Produto {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getFabricante() {
+        return fabricante;
+    }
+
+    public void setFabricante(String fabricante) {
+        this.fabricante = fabricante;
     }
 
     public double getValor() {
