@@ -1,8 +1,15 @@
 package view;
 
-public class Menu {
+import java.util.Scanner;
 
-    public void exibirHeaderMenu() {
+public class Menu {
+    private Scanner scanner;
+
+    public Menu() {
+        scanner = new Scanner(System.in);
+    }
+
+    public void exibirMenuHeader() {
         System.out.println("*************************************");
         System.out.println("*                                   *");
         System.out.println("*      GERENCIADOR DE PRODUTOS      *");
@@ -10,16 +17,24 @@ public class Menu {
         System.out.println("*************************************\n");
     }
 
-    public void exibirMenuPrincipal() {
+    public int exibirMenuPrincipal() {
         System.out.println("[1] Cadastrar produto");
         System.out.println("[2] Listar produto");
         System.out.println("[3] Remover produto");
         System.out.println("[0] Sair\n");
+        
+        System.out.print("Selecione a opção desejada: ");
+        int opcao = Integer.parseInt(scanner.nextLine());
+        return opcao;
     }
 
-    public void exibirMenuOpcao01 () {
+    public int exibirMenuCadastrarProduto () {
         System.out.println("[1] Cadastrar procesador");
         System.out.println("[2] Cadastrar placa de video");
         System.out.println("[3] Cadastrar disco rigido\n");
+
+        System.out.print("Selecione a sub-opção desejada: ");
+        int opcao = Integer.parseInt(scanner.nextLine());
+        return opcao;
     }
 }
