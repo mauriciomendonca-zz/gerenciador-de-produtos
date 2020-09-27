@@ -1,4 +1,4 @@
-package model;
+package controller;
 
 public class PlacaDeVideo extends Produto {
     public PlacaDeVideo(String nome, String fabricante, double valor) {

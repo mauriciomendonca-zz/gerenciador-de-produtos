@@ -1,4 +1,4 @@
-package model;
+package controller;
 
 public abstract class Produto {
     private String nome;

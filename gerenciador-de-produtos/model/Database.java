@@ -13,19 +13,20 @@ public class Database {
 
         try {
             File file = new File(filePath.toString());
-            FileWriter fileWriter = new FileWriter(filePath.toString());
 
-            if (file.isFile() && file.exists()) {
-                fileWriter.write("hahahahaha\n");
+            if (!file.exists()) {
+                FileWriter fileWriter = new FileWriter(filePath.toString(), true);
+                fileWriter.write("NOME;VALOR;TIPO\n");
                 fileWriter.close();
-            }
-            else {
-                fileWriter.write("NOME;VALOR;TIPO");
+            } else {
+                FileWriter fileWriter = new FileWriter(filePath.toString(), true);
+                fileWriter.write("LIXO;LIXO;LIXO\n");
                 fileWriter.close();
             }
         } catch (Exception e) {
-            System.out.println("Erro ao criar o arquivo para o banco de dados");
+            //TODO: handle exception
         }
+
     }
 
     public void remove() {
