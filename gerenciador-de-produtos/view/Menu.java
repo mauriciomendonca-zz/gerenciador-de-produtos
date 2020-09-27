@@ -1,6 +1,7 @@
 package view;
 
 public class Menu {
+
     public void exibirMenuPrincipal() {
         System.out.println("[1] Cadastrar produto");
         System.out.println("[2] Listar produto");
