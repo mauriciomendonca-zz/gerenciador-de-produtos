@@ -2,10 +2,10 @@ package view;
 
 import java.util.Scanner;
 
-public class Menu {
+public class MenuPrincipal {
     private Scanner scanner;
 
-    public Menu() {
+    public MenuPrincipal() {
         scanner = new Scanner(System.in);
     }
 

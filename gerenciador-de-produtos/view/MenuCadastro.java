@@ -2,10 +2,10 @@ package view;
 
 import java.util.Scanner;
 
-public class Cadastro {
+public class MenuCadastro {
     private Scanner scanner;
 
-    public Cadastro() {
+    public MenuCadastro() {
         scanner = new Scanner(System.in);
     }
 

@@ -3,34 +3,32 @@ package model;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class DatabaseProcessador {
+public class DatabasePlacaDeVideo {
     private Path currentPath;
     private Path filepath;
 
-    public DatabaseProcessador() {
+    public DatabasePlacaDeVideo() {
         currentPath = Paths.get(System.getProperty("user.dir"));
-        filepath = Paths.get(currentPath.toString(), "gerenciador-de-produtos", "db", "processador.csv");
+        filepath = Paths.get(currentPath.toString(), "gerenciador-de-produtos", "db", "placa-de-video.csv");
     }
 
-    public void insert(String nome, String fabricante, double valor, double frequencia) {
+    public void insert(String nome, String fabricante, double valor, int memoria) {
         try {
             File file = new File(filepath.toString());
 
             if (!file.exists()) {
                 FileWriter fileWriter = new FileWriter(filepath.toString(), true);
-                fileWriter.write("nome;fabricante;valor;frequencia\n");
-                fileWriter.write(nome + ";" + fabricante + ";" + valor + ";" + frequencia + "\n");
+                fileWriter.write("nome;fabricante;valor;memoria\n");
+                fileWriter.write(nome + ";" + fabricante + ";" + valor + memoria + "\n");
                 fileWriter.close();
             } else {
                 FileWriter fileWriter = new FileWriter(filepath.toString(), true);
-                fileWriter.write(nome + ";" + fabricante + ";" + valor + "\n");
+                fileWriter.write(nome + ";" + fabricante + ";" + valor + ";" + memoria + "\n");
                 fileWriter.close();
             }
         } catch (Exception e) {
@@ -39,7 +37,7 @@ public class DatabaseProcessador {
     }
 
     public void delete(String nome) {
-        Path temporaryFilepath = Paths.get(currentPath.toString(), "gerenciador-de-produtos", "db", "temp-processador.csv");
+        Path temporaryFilepath = Paths.get(currentPath.toString(), "gerenciador-de-produtos", "db", "temp-placa-de-video.csv");
 
         File originalFile = new File(filepath.toString());
         File temporaryFile = new File(temporaryFilepath.toString());
@@ -62,18 +60,6 @@ public class DatabaseProcessador {
     }
 
     public void sort() {
-        try {
-            FileReader fileReader = new FileReader(filepath.toString());
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String line  = bufferedReader.readLine();
-            while (line != null) {
-                System.out.println(line);
-                line = bufferedReader.readLine();
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("Banco de dados Processador não encontrado!");
-        } catch (IOException e) {
-            System.out.println("Erro na leitura do banco de dados Processador!");
-        }
+        System.out.println("ordenar");
     }
 }

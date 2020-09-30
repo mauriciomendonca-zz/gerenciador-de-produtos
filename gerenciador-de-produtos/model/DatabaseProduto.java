@@ -3,8 +3,10 @@ package model;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -55,11 +57,26 @@ public class DatabaseProduto {
             bufferedWriter.close();
             temporaryFile.renameTo(originalFile);
         } catch (Exception e) {
-            System.out.println("fdsfdsfd");
+            System.out.println("Erro ao deletar a(s) linha(s) do arquivo!");
         }
     }
 
     public void sort() {
-        System.out.println("ordenar");
+        try {
+            FileReader fileReader = new FileReader(filepath.toString());
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line  = bufferedReader.readLine();
+            while (line != null) {
+                System.out.println(line);
+                line  = bufferedReader.readLine();
+                String[] arrayLine = line.split(";");
+                System.out.println(arrayLine[0]);
+            }
+            bufferedReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Banco de dados Produto não encontrado!");
+        } catch (IOException e) {
+            System.out.println("Erro na leitura do banco de dados Produto!");
+        }
     }
 }
