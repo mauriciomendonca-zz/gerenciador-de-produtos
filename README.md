@@ -1,5 +1,5 @@
 # Autor
-[Mauricio Rodrigues Mendonça](mauriciomendonca14@gmail.com)  
+Mauricio Rodrigues Mendonça (mauriciomendonca14@gmail.com)  
 [GitHub](https://github.com/mauriciomendonca)
 
 # Gerenciador de produtos
