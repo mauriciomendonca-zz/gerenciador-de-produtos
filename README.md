@@ -1,10 +1,10 @@
+# Autor
+[Mauricio Rodrigues Mendonça](mauriciomendonca14@gmail.com)  
+[GitHub](https://github.com/mauriciomendonca)
+
 # Gerenciador de produtos
 
 É um projeto desenvolvido em Java para a disciplina de Algoritmos e Programação: Estruturas Lineares na qual o usuário irá interagir com um menu via console para poder realizar o cadastro, a remoção e ordenação de três produtos distintos.
-
-## Autor
-[Mauricio Rodrigues Mendonça](mauriciomendonca14@gmail.com)  
-[GitHub](https://github.com/mauriciomendonca)
 
 ## Descrição
 
